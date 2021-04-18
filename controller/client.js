@@ -20,6 +20,7 @@ function errorChecking(err) {
 }
 
 buttonA.watch(function(err, _value) {
+  console.log(`button pressed ${_value}`)
   if(err) {
     console.error(`There was an error ${err}`)
   } else {
