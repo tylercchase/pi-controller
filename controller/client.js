@@ -18,11 +18,11 @@ function errorChecking(err) {
   }
 }
 
-buttonA.watch(function(err, value) {
+buttonA.watch(function(err, _value) {
   if(err) {
     console.error(`There was an error ${err}`)
   } else {
-    client.send(Buffer.from(JSON.stringify({button:1,value: 'pushed'})),
+    client.send(Buffer.from(JSON.stringify({button:1,value: value})),
     2222,serverAddress,errorChecking)
   }
 })
