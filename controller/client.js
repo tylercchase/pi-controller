@@ -4,8 +4,8 @@ let buffer = require('buffer');
 const { json } = require('express');
 // let Gpio = require('onoff').Gpio;
 // // creating a client socket
-// var client = udp.createSocket('udp4');
-// let serverAddress = 'localhost'//'192.168.1.118'
+var client = udp.createSocket('udp4');
+let serverAddress = '192.168.1.118'
 
 // let buttonA = new Gpio(14, 'in', 'both')
 
