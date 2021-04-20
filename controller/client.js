@@ -7,7 +7,7 @@ let Gpio = require('onoff').Gpio;
 var client = udp.createSocket('udp4');
 let serverAddress = '192.168.1.118'
 
-let buttonA = new Gpio(14, 'in', 'both')
+let buttonA = new Gpio(15, 'in', 'both')
 
 function errorChecking(err) {
   if(err) {
