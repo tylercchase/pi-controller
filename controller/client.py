@@ -16,4 +16,4 @@ while True:
     print(pressed_buttons)
     if pressed_buttons: 
         sock.sendto(json.dumps({"buttons": pressed_buttons}).encode(), (UDP_IP, UDP_PORT))
-    sleep(1)
+    sleep(0.5)

@@ -3,8 +3,8 @@ const udp = require('dgram')
 const server = udp.createSocket('udp4')
 const robot = require('robotjs')
 
-function clearKeyboard() {
-  const keys = ['w','a','s','d','space']
+function clearKeyboard () {
+  const keys = ['w', 'a', 's', 'd', 'space']
   for (let i = 0; i < keys.length; i++) {
     robot.keyToggle(keys[i], 'up')
   }
@@ -17,6 +17,7 @@ server.on('error', function (error) {
 
 server.on('message', function (msg, info) {
   msg = JSON.parse(msg)
+  console.log(`Recieved: ${msg.buttons}`)
   msg.buttons.forEach(button => {
     switch (button) {
       case 'up':
