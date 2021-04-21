@@ -12,25 +12,33 @@ server.on('message', function (msg, info) {
   console.log('Data received from client : ' + msg.toString())
   console.log('Received %d bytes from %s:%d\n', msg.length, info.address, info.port)
   msg = JSON.parse(msg)
-  switch (msg.caller) {
-    case 'buttonW':
-      console.log('Button W pressed')
-      robot.keyTap('w')
-    case 'buttonA':
-      console.log('Button A pressed')
-      robot.keyTap('a')
-    case 'buttonS':
-      console.log('Button S pressed')
-      robot.keyTap('s')
-    case 'buttonD':
-      console.log('Button D pressed')
-      robot.keyTap('d')
-    // case 'buttonX':
-    //   console.log('Button X pressed')
-    //   robot.keyTap('space')
-  }
+  msg.buttons.forEach(button => {
+    switch (button) {
+      case 'up':
+        console.log('Button W pressed')
+        robot.keyTap('w')
+        break
+      case 'down':
+        console.log('Button A pressed')
+        robot.keyTap('a')
+        break
+      case 'left':
+        console.log('Button S pressed')
+        robot.keyTap('s')
+        break
+      case 'right':
+        console.log('Button D pressed')
+        robot.keyTap('d')
+        break
+      case 'b':
+        console.log('Button X pressed')
+        robot.keyTap('space')
+        break
+      default:
+        break
+    }
+  })
 })
-
 // emits when socket is ready and listening for datagram msgs
 server.on('listening', function () {
   const address = server.address()
