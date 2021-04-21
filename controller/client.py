@@ -6,9 +6,6 @@ UDP_IP = "192.168.1.145"
 UDP_PORT = 2222
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-# buttonA = Button(14)
-# joystickUp = DigitalInputDevice(15)
-# joystickSide = DigitalInputDevice(18)
 buttons = {'down': Button(14),'left': Button(15), 'up': Button(18), 'right': Button(2), 'a': Button(3), 'b': Button(4)}
 
 while True:
@@ -19,4 +16,4 @@ while True:
     print(pressed_buttons)
     if pressed_buttons: 
         sock.sendto(json.dumps({"buttons": pressed_buttons}).encode(), (UDP_IP, UDP_PORT))
-    sleep(0.3)
+    sleep(1)
