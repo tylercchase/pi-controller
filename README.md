@@ -5,6 +5,10 @@
  - 6 buttons
  - Breaboard
  - Cables
+
+A preview of what the circuit looks like
+![rpi_controller](https://user-images.githubusercontent.com/17506744/116475899-eccccb00-a826-11eb-99be-1b124e40cdab.jpg)
+
 # Software
 The software for the controller is split up into two parts. There is code that runs on the computer you want to have simulated keypress, and code that is run on the controller itself.
 ## Controller (Python)
